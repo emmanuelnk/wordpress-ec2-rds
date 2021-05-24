@@ -1,14 +1,12 @@
-# Welcome to your CDK TypeScript project!
+[![Deploy](https://github.com/emmanuelnk/wordpress-ec2-rds/actions/workflows/deploy.yml/badge.svg)](https://github.com/emmanuelnk/wordpress-ec2-rds/actions/workflows/deploy.yml)
 
-This is a blank project for TypeScript development with CDK.
+# Wordpress EC2 RDS
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+This project is part of an on-going series in learning how to use the AWS CDK
 
-## Useful commands
+![wp-rds-asg](https://user-images.githubusercontent.com/19330930/119336734-91281d00-bcc0-11eb-8914-e9fcea4561a1.png)
 
- * `npm run build`   compile typescript to js
- * `npm run watch`   watch for changes and compile
- * `npm run test`    perform the jest unit tests
- * `cdk deploy`      deploy this stack to your default AWS account/region
- * `cdk diff`        compare deployed stack with current state
- * `cdk synth`       emits the synthesized CloudFormation template
+
+See my [article](https://dev.to/emmanuelnk/part-4-wordpress-ec2-instance-in-asg-with-rds-database-and-alb-awesome-aws-cdk-3cij) on Dev.to learn about this project
+
+

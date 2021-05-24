@@ -1,0 +1,26 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+      - dev
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: nelonoel/branch-name@v1.0.1
+      - name: cdk deploy
+        uses: youyo/aws-cdk-github-actions@v1
+        with:
+          cdk_subcommand: 'deploy'
+          cdk_args: '--require-approval never'
+        env:
+          STAGE: ${{ env.BRANCH_NAME == 'master' && 'prod' || 'dev'  }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          AWS_ACCOUNT_NUMBER: ${{ secrets.AWS_ACCOUNT_NUMBER }}
+          DEPLOYED_BY: ${{ secrets.DEPLOYED_BY }}
